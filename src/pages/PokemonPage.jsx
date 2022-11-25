@@ -1,22 +1,19 @@
 import useFetch from "../hooks/useAxios";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const PokemonPage = () => {
-  const [data, setData] = useState();
   const { pokeData, loading } = useFetch();
-  const { id } = useParams();
+  const location = useLocation();
+  const data = location.state;
+  console.log(data.data);
 
-  useEffect(() => {
-    if (pokeData && pokeData.data) setData(pokeData);
-  }, [pokeData]);
-  console.log(loading);
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <h1 className="text-white">Loading...</h1>
       ) : (
-        pokeData && <h1 className="text-white">{pokeData[id - 1].name}</h1>
+        pokeData && <h1 className="text-white">fff</h1>
       )}
     </div>
   );
