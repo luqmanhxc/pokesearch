@@ -28,24 +28,16 @@ const useAxios = () => {
     });
   };
 
-  const getPokemonDetailsByID = async (id) => {
-    setLoading(true);
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    setLoading(false);
-    console.log(res.data.name);
-    return res.data;
-  };
-
   useEffect(() => {
     getPokemonData();
   }, [url]);
 
-  const loadMore = () => {
-    console.log("clicked");
-    setUrl(nextUrl);
-  };
+  // const loadMore = () => {
+  //   console.log("clicked");
+  //   setUrl(nextUrl);
+  // };
 
-  return { pokeData, loadMore, getPokemonDetailsByID, loading };
+  return { pokeData, loading };
 };
 
 export default useAxios;
