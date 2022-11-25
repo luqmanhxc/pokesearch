@@ -1,4 +1,8 @@
-const Pagination = ({ loadMore }) => {
+import useFetch from "../hooks/useAxios";
+
+const Pagination = () => {
+  const { loadMore } = useFetch();
+
   return (
     <div className="flex items-center justify-center">
       <button
