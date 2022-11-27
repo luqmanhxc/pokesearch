@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="bg-slate-900">
+    <div className="h-screen bg-slate-900">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<PokemonPage />} />
