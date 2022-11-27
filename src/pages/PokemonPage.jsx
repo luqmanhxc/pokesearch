@@ -10,9 +10,6 @@ const PokemonPage = () => {
       type: type.type.name,
     };
   });
-  const abilitiesArr = data.abilities.map((ability) => {
-    return ability.ability.name;
-  });
   const {
     id,
     name,
@@ -32,39 +29,45 @@ const PokemonPage = () => {
       5: { base_stat: speed },
     },
   } = data;
-  // feature: maybe add moves later
 
   return (
-    <div className="text-white">
-      <div className="flex justify-center p-5 font-inter text-4xl">
-        <p className="mr-5">#{id}</p>
-        <p className="">{name.charAt(0).toUpperCase() + name.slice(1)}</p>
+    <div className="m-auto h-screen text-white">
+      <div className=" flex justify-center p-5 font-inter text-4xl">
+        <p className="mr-5 mt-6">#{id}</p>
+        <p className="mt-6">{name.charAt(0).toUpperCase() + name.slice(1)}</p>
       </div>
-      <div className="m-auto flex items-center justify-evenly border-2">
+      <div className="m-auto mt-16 flex w-9/12 items-center justify-evenly">
         <img src={pokeImg} className="rounded-xl border-2 bg-gray-200" />
-        <div className="w-full">
-          <div className="flex justify-center p-5 text-2xl">
-            <p className="mr-7">
-              Height <span>{height / 10} m</span>
-            </p>
-            <p>Weight: {weight / 10} kg</p>
-          </div>
-          {
-            <Stats
-              hp={hp}
-              attack={attack}
-              defense={defense}
-              specialAttack={specialAttack}
-              specialDefense={specialDefense}
-              speed={speed}
-            />
-          }
-          <div className="m-auto mt-5 flex justify-center text-xl">
-            {typesArr.map((type) => (
-              <p className="px-5 py-2 text-center text-xl" key={type.typeSlot}>
-                {type.type.toUpperCase()}
+        <div>
+          <div className="w-full">
+            <div className="flex items-center justify-evenly p-5 text-center text-xl">
+              <p>
+                HEIGHT <span className="block text-4xl">{height / 10} m</span>
               </p>
-            ))}
+              <p>
+                WEIGHT <span className="block text-4xl">{weight / 10} kg</span>
+              </p>
+            </div>
+            {
+              <Stats
+                hp={hp}
+                attack={attack}
+                defense={defense}
+                specialAttack={specialAttack}
+                specialDefense={specialDefense}
+                speed={speed}
+              />
+            }
+            <div className="m-auto flex justify-center text-xl">
+              {typesArr.map((type) => (
+                <p
+                  className="px-5 py-2 text-center text-2xl"
+                  key={type.typeSlot}
+                >
+                  {type.type.toUpperCase()}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
