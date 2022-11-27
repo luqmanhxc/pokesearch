@@ -1,16 +1,22 @@
-import useFetch from "../hooks/useAxios";
-
-const Pagination = () => {
-  const { loadMore } = useFetch();
-
+const Pagination = ({ prevUrl, nextUrl, goToPrevPage, goToNextPage }) => {
   return (
-    <div className="flex items-center justify-center">
-      <button
-        onClick={loadMore}
-        className="mb-5 cursor-pointer rounded-lg bg-gray-800 px-5 py-2.5 font-inter text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-      >
-        Load More
-      </button>
+    <div className="m-auto flex w-56 items-center justify-evenly">
+      {prevUrl && (
+        <button
+          onClick={goToPrevPage}
+          className="text-md mb-5 cursor-pointer rounded-lg bg-gray-800 px-5 py-2.5 font-inter text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+        >
+          Prev
+        </button>
+      )}
+      {nextUrl && (
+        <button
+          onClick={goToNextPage}
+          className="text-md mb-5 cursor-pointer rounded-lg bg-gray-800 px-5 py-2.5 font-inter text-white hover:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 };
