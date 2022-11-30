@@ -5,6 +5,10 @@ import PokemonGrid from "./components/PokemonGrid";
 import Pagination from "./components/Pagination";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import LoginButton from "./components/buttons/login";
+import LogoutButton from "./components/buttons/logout";
+import Profile from "./pages/Profile";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -47,32 +51,37 @@ const App = () => {
 
   return (
     <div className="h-full bg-slate-900">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <NavBar>
+                  <LoginButton />
+                  <LogoutButton />
+                  <PokemonGrid pokeData={pokeData} />
+                  <Pagination
+                    prevUrl={prevUrl}
+                    nextUrl={nextUrl}
+                    goToPrevPage={goToPrevPage}
+                    goToNextPage={goToNextPage}
+                  />
+                </NavBar>
+              </div>
+            }
+          />
+          <Route
+            path="/pokemon/:id"
+            element={
               <NavBar>
-                <PokemonGrid pokeData={pokeData} />
-                <Pagination
-                  prevUrl={prevUrl}
-                  nextUrl={nextUrl}
-                  goToPrevPage={goToPrevPage}
-                  goToNextPage={goToNextPage}
-                />
+                <PokemonPage />
               </NavBar>
-            </div>
-          }
-        />
-        <Route
-          path="/pokemon/:id"
-          element={
-            <NavBar>
-              <PokemonPage />
-            </NavBar>
-          }
-        />
-      </Routes>
+            }
+          />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
