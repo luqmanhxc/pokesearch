@@ -31,13 +31,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/images/pokesearch.png" alt="Logo">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">PokeSearch</h3>
 
   <p align="center">
-    project_description
+    Pokemon application to get their stats in detail.
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -74,7 +74,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -85,7 +84,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+A pokemon application developed using React, pokeAPI and auth0.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -94,6 +93,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 * [![React][React.js]][React-url]
+* PokeAPI
+* Auth0
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,6 +106,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
+* used node v19.1.0
 
 * npm
   ```sh
@@ -121,7 +124,12 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm install / yarn install
    ```
-3. Run 
+3. Create `.env` in root directory and add auth0 credentials
+   ```sh
+   REACT_APP_AUTH0_DOMAIN=yourdomain
+   REACT_APP_AUTH0_CLIENT_ID=yourclientid
+   ```
+4. Run 
    ```js
    yarn dev
    ```
@@ -144,10 +152,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Protected routes for pokemon
+- [ ] Favourite pokemon 
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
@@ -168,19 +174,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
