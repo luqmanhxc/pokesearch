@@ -6,6 +6,7 @@ import Pagination from "./components/Pagination";
 import Profile from "./pages/Profile";
 import { BrowserRouter } from "react-router-dom";
 import usePokemonData from "./hooks/usePokemonData";
+import Spinner from "./components/spinner";
 
 const App = () => {
   const { pokeData, loading, prevUrl, nextUrl, goToPrevPage, goToNextPage } =
@@ -19,13 +20,19 @@ const App = () => {
           element={
             <div>
               <Layout>
-                <PokemonGrid pokeData={pokeData} />
-                <Pagination
-                  goToPrevPage={goToPrevPage}
-                  goToNextPage={goToNextPage}
-                  prevUrl={prevUrl}
-                  nextUrl={nextUrl}
-                />
+                {loading ? (
+                  <Spinner />
+                ) : (
+                  <>
+                    <PokemonGrid pokeData={pokeData} />
+                    <Pagination
+                      goToPrevPage={goToPrevPage}
+                      goToNextPage={goToNextPage}
+                      prevUrl={prevUrl}
+                      nextUrl={nextUrl}
+                    />
+                  </>
+                )}
               </Layout>
             </div>
           }
