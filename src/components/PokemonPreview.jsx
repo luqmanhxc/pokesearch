@@ -10,7 +10,7 @@ const PokemonPreview = ({ id, name, sprite }) => {
           src={sprite}
           alt={`${name} sprite`}
         />
-        <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+        <h5 className="text-md font-medium tracking-widest text-gray-900 dark:text-white">
           {name.toUpperCase()}
         </h5>
       </div>
