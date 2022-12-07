@@ -31,7 +31,7 @@ const PokemonPage = () => {
   } = data;
 
   return (
-    <div className="m-auto h-screen text-white">
+    <div className="m-auto h-full p-10 text-white">
       <div className=" flex justify-center p-5 font-inter text-4xl">
         <p className="mr-5 mt-6">#{id}</p>
         <p className="mt-6">{name.charAt(0).toUpperCase() + name.slice(1)}</p>
