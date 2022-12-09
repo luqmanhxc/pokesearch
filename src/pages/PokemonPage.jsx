@@ -40,19 +40,18 @@ const PokemonPage = () => {
 
   return (
     <Layout>
-      <div className="m-auto h-full rounded-lg border-[20px] border-[#F4DB5B] text-white">
-        <div className="mb-4 flex justify-center p-5 font-inter text-4xl font-bold drop-shadow-md">
-          <p className="mr-5">#{id}</p>
-          <p className="tracking-wider">
+      <div
+        className={`m-auto h-full bg-gradient-to-r text-white from-${mainType} to-${POKEAPI_TYPE_TO_COLOR[mainType]} pb-5`}
+      >
+        <div className="relative mb-4 flex items-center justify-center p-5 font-inter">
+          <p className="text-9xl font-bold opacity-20">#{id}</p>
+          <span className="z-5 inset-50 absolute text-6xl font-bold tracking-wider opacity-100">
             {name.charAt(0).toUpperCase() + name.slice(1)}
-          </p>
+          </span>
         </div>
 
         <div className="m-auto flex w-9/12 flex-col items-center justify-evenly md:flex-row">
-          <img
-            src={pokeImg}
-            className={`w-[300px] border-2 bg-gradient-to-r p-5 md:mr-4 from-${mainType} to-${POKEAPI_TYPE_TO_COLOR[mainType]}`}
-          />
+          <img src={pokeImg} className={`w-[300px] p-5 md:mr-4`} />
           <div>
             <div className="w-full">
               <div className="flex items-center justify-evenly p-5 text-center text-xl">
@@ -83,9 +82,9 @@ const PokemonPage = () => {
                 {typesArr.map((type) => (
                   <div
                     key={type.typeSlot}
-                    className={`text-md mr-4 rounded-lg px-5 py-2 text-center drop-shadow-lg bg-${type.type}`}
+                    className={`text-md mr-4 rounded-lg px-5 py-2 text-center shadow-lg bg-${type.type}`}
                   >
-                    <p>{type.type.toUpperCase()}</p>
+                    <p className="drop-shadow-md">{type.type.toUpperCase()}</p>
                   </div>
                 ))}
               </div>
