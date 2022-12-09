@@ -19,13 +19,20 @@ const usePokemonData = () => {
   };
 
   const getPokemonDetails = async (res) => {
-    res.map(async (item) => {
+    res?.map(async (item) => {
       const result = await axios.get(item.url);
       setPokeData((state) => {
         state = [...state, result.data];
         return state;
       });
     });
+  };
+
+  const getPokemonDetailsQuery = async (query) => {
+    setLoading(true);
+    const result = await axios.get(query);
+    setLoading(false);
+    return result;
   };
 
   useEffect(() => {
@@ -39,6 +46,10 @@ const usePokemonData = () => {
     nextUrl,
     goToPrevPage: () => setUrl(prevUrl),
     goToNextPage: () => setUrl(nextUrl),
+    setUrl,
+    url,
+    getPokemonData,
+    getPokemonDetailsQuery,
   };
 };
 
