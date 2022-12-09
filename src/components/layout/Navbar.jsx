@@ -7,10 +7,11 @@ import LogoutButtonMobile from "../buttons/logout-mobile";
 import { useAuth0 } from "@auth0/auth0-react";
 import Logo from "../../images/pokesearch.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import SearchBox from "../SearchBox";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
-  const { logout, user, isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   const toggleNav = () => setNav(!nav);
 
@@ -18,7 +19,9 @@ export default function Navbar() {
     <nav className="fixed z-10 h-[80px] w-screen bg-gray-900 drop-shadow-lg">
       <div className="flex h-full w-full items-center justify-between px-2">
         <div className="flex items-center">
-          <img src={Logo} className="mr-4 w-[150px] md:w-[100px]" />
+          <Link to="/">
+            <img src={Logo} className="mr-4 w-[150px] md:w-[100px]" />
+          </Link>
           <ul className="hidden text-white md:flex">
             <li className="p-4">
               <Link to="/">Home</Link>
@@ -30,6 +33,7 @@ export default function Navbar() {
               <Link to="/profile">Profile</Link>
             </li>
           </ul>
+          <SearchBox />
         </div>
         <div className="hidden pr-4 md:flex">
           {!isAuthenticated && <LoginButton />}
