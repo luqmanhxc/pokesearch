@@ -1,75 +1,74 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import LoginButton from "../buttons/login";
 import LogoutButton from "../buttons/logout";
+import LoginButtonMobile from "../buttons/login-mobile";
+import LogoutButtonMobile from "../buttons/logout-mobile";
+import { useAuth0 } from "@auth0/auth0-react";
 import Logo from "../../images/pokesearch.png";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const NavBar = () => {
+export default function Navbar() {
+  const [nav, setNav] = useState(false);
+  const { logout, user, isAuthenticated } = useAuth0();
+
+  const toggleNav = () => setNav(!nav);
+
   return (
-    <nav className="border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
-      <div className="container mx-auto flex flex-wrap items-center justify-between">
-        <Link to="/" className="flex items-center">
-          <img src={Logo} className="mr-3 h-6 sm:h-9" alt="PokeSearch Logo" />
-        </Link>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="h-6 w-6"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="mt-4 flex flex-col items-center rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium md:dark:bg-gray-900">
-            <li>
-              <a
-                href="#"
-                className="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0 md:text-blue-700"
-                aria-current="page"
-              >
-                Home
-              </a>
+    <nav className="fixed z-10 h-[80px] w-screen bg-gray-900 drop-shadow-lg">
+      <div className="flex h-full w-full items-center justify-between px-2">
+        <div className="flex items-center">
+          <img src={Logo} className="mr-4 w-[150px] md:w-[100px]" />
+          <ul className="hidden text-white md:flex">
+            <li className="p-4">
+              <Link to="/">Home</Link>
             </li>
-            <li>
-              <a
-                href="#"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
-              >
-                About
-              </a>
+            <li className="p-4">
+              <Link to="/about">About</Link>
             </li>
-            <li>
-              <a
-                href="#"
-                className="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
-              >
-                Contact
-              </a>
-            </li>
-            <li>
-              <LoginButton />
-            </li>
-            <li>
-              <LogoutButton />
+            <li className="p-4">
+              <Link to="/profile">Profile</Link>
             </li>
           </ul>
         </div>
+        <div className="hidden pr-4 md:flex">
+          {!isAuthenticated && <LoginButton />}
+          {isAuthenticated && <LogoutButton />}
+        </div>
+        <div className="md:hidden" onClick={toggleNav}>
+          {!nav ? (
+            <Bars3Icon className="w-8 cursor-pointer text-white" />
+          ) : (
+            <XMarkIcon className="w-8 cursor-pointer text-white" />
+          )}
+        </div>
       </div>
+
+      <ul
+        className={
+          !nav ? "hidden" : "absolute w-screen bg-gray-900 px-8 md:hidden"
+        }
+      >
+        <Link to="/">
+          <li className="w-full border-b-2 border-gray-200 p-4 text-white hover:bg-slate-800">
+            Home
+          </li>
+        </Link>
+        <Link to="/about">
+          <li className="w-full border-b-2 border-gray-200 p-4 text-white hover:bg-slate-800">
+            About
+          </li>
+        </Link>
+        <Link to="/profile">
+          <li className="w-full border-b-2 border-gray-200 p-4 text-white hover:bg-slate-800">
+            Profile
+          </li>
+        </Link>
+        <div className="my-4 flex flex-col">
+          {!isAuthenticated && <LoginButtonMobile />}
+          {isAuthenticated && <LogoutButtonMobile />}
+        </div>
+      </ul>
     </nav>
   );
-};
-
-export default NavBar;
+}
