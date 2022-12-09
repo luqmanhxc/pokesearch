@@ -50,7 +50,9 @@ export default function Navbar() {
 
       <ul
         className={
-          !nav ? "hidden" : "absolute w-screen bg-gray-900 px-8 md:hidden"
+          !nav
+            ? "invisible transition duration-700 ease-in-out"
+            : "visible absolute w-screen bg-gray-900 px-8 transition duration-700 ease-in-out md:invisible"
         }
       >
         <Link to="/">
