@@ -7,7 +7,7 @@ const LoginButton = () => {
   return (
     <button
       onClick={() => loginWithRedirect()}
-      className="rounded bg-white py-2 px-4 text-center text-black hover:bg-gray-200"
+      className="mr-4 rounded bg-white py-2 px-4 text-center text-black hover:bg-gray-200"
     >
       Log In
     </button>
