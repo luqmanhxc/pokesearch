@@ -10,12 +10,10 @@ const usePokemonData = () => {
 
   const getPokemonData = async () => {
     setPokeData([]);
-    setLoading(true);
     const res = await axios.get(url);
     setNextUrl(res.data.next);
     setPrevUrl(res.data.previous);
-    getPokemonDetails(res.data.results);
-    setLoading(false);
+    getPokemonDetails(res.data.results).then(() => setLoading(false));
   };
 
   const getPokemonDetails = async (res) => {
@@ -28,14 +26,8 @@ const usePokemonData = () => {
     });
   };
 
-  const getPokemonDetailsQuery = async (query) => {
-    setLoading(true);
-    const result = await axios.get(query);
-    setLoading(false);
-    return result;
-  };
-
   useEffect(() => {
+    setLoading(true);
     getPokemonData();
   }, [url]);
 
@@ -49,7 +41,6 @@ const usePokemonData = () => {
     setUrl,
     url,
     getPokemonData,
-    getPokemonDetailsQuery,
   };
 };
 
