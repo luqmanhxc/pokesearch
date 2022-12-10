@@ -1,5 +1,11 @@
+import Layout from "../layout/Layout";
+
 const About = () => {
-  return <h1 className="text-white">ABOUT US</h1>;
+  return (
+    <Layout>
+      <div className="h-screen">WORK IN PROGRESS</div>
+    </Layout>
+  );
 };
 
 export default About;
