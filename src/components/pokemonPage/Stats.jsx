@@ -7,7 +7,7 @@ const Stats = ({
   speed,
 }) => {
   return (
-    <div className="mt-5 grid grid-cols-3 gap-10 rounded-lg bg-slate-700 p-5 text-center text-xl tracking-wider shadow-lg">
+    <div className="mt-5 grid grid-cols-3 gap-10 rounded-lg bg-gradient-to-r from-gray-700 via-gray-900 to-black p-5 text-center text-xl tracking-wider shadow-lg">
       <p>
         HEALTH <span className="block text-4xl ">{hp}</span>
       </p>
