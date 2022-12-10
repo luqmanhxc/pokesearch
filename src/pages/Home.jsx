@@ -7,9 +7,10 @@ import Spinner from "../components/Spinner";
 const Home = () => {
   const { pokeData, loading, prevUrl, nextUrl, goToPrevPage, goToNextPage } =
     usePokemonData();
+
   return (
     <Layout>
-      {pokeData.length < 20 ? (
+      {loading ? (
         <Spinner />
       ) : (
         <>
