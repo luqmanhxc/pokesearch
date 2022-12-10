@@ -7,7 +7,7 @@ import LogoutButtonMobile from "../buttons/logout-mobile";
 import { useAuth0 } from "@auth0/auth0-react";
 import Logo from "../../images/pokesearch.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import SearchBox from "../SearchBox";
+import SearchSection from "../Search";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -33,7 +33,7 @@ export default function Navbar() {
               <Link to="/profile">Profile</Link>
             </li>
           </ul>
-          <SearchBox />
+          <SearchSection />
         </div>
         <div className="hidden pr-4 md:flex">
           {!isAuthenticated && <LoginButton />}
