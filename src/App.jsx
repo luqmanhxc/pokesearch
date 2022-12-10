@@ -5,6 +5,7 @@ import About from "./pages/About";
 import { BrowserRouter } from "react-router-dom";
 import ProtectedComponent from "./components/ProtectedRoute";
 import Home from "./pages/Home";
+import PokemonSearchPage from "./pages/PokemonSearchPage";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemon/:id" element={<PokemonPage />} />
+        <Route path="/search/:query" element={<PokemonSearchPage />} />
         <Route
           path="/profile"
           element={<ProtectedComponent component={Profile} />}
