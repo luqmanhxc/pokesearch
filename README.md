@@ -1,12 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
+
 
 
 
@@ -39,14 +31,11 @@
   <p align="center">
     Pokemon application to get their stats in detail.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/luqmanhxc/pokesearch">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/luqmanhxc/pokesearch/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/luqmanhxc/pokesearch/issues">Request Feature</a>
   </p>
 </div>
 
@@ -69,11 +58,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -82,7 +67,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About PokeSearch
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![localhost_5173_ (1)](https://user-images.githubusercontent.com/12962262/206873864-09ac4950-c5a6-4c7b-9ae1-0243d1d86d78.png)
+![mobile-pokesearch](https://user-images.githubusercontent.com/12962262/206873905-6da8672e-ccfc-4c41-baca-73d386fbf5d1.png)
 
 A pokemon application developed using React, pokeAPI and auth0.
 
@@ -92,12 +78,13 @@ A pokemon application developed using React, pokeAPI and auth0.
 
 ### Built With
 
-* [![React][React.js]][React-url]
+* [![React][React.js]][React-url] + Vite
+* React Router v6
+* Tailwind CSS
 * PokeAPI
 * Auth0
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -107,7 +94,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-* used node v19.1.0
+* using node v19.1.0
 
 * npm
   ```sh
@@ -122,62 +109,30 @@ To get a local copy up and running follow these simple example steps.
    ```
 2. Install NPM packages
    ```sh
-   npm install / yarn install
+   npm install
    ```
 3. Create `.env` in root directory and add auth0 credentials
    ```sh
-   REACT_APP_AUTH0_DOMAIN=yourdomain
-   REACT_APP_AUTH0_CLIENT_ID=yourclientid
+   VITE_AUTH0_DOMAIN=<DOMAIN>
+   VITE_AUTH0_CLIENT_ID=<CLIENTID>
    ```
 4. Run 
    ```js
-   yarn dev
+   npm run dev
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Protected routes for pokemon
-- [ ] Favourite pokemon 
+- [X] Protected routes for pokemon
+- [X] Search pokemon
+- [ ] Favourite pokemon (only when logged in)
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+See the [open issues](https://github.com/luqmanhxc/pokesearch/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
