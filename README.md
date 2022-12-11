@@ -31,7 +31,7 @@
   <p align="center">
     Pokemon application to get their stats in detail.
     <br />
-    <a href="https://github.com/luqmanhxc/pokesearch">View Demo</a>
+    <a href="https://pokesearch-seven.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/luqmanhxc/pokesearch/issues">Report Bug</a>
     ·
@@ -90,12 +90,11 @@ A pokemon application developed using React, pokeAPI and auth0.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
-* using node v19.1.0
-
+* node v19.1.0
 * npm
   ```sh
   npm install npm@latest -g
@@ -116,7 +115,13 @@ To get a local copy up and running follow these simple example steps.
    VITE_AUTH0_DOMAIN=<DOMAIN>
    VITE_AUTH0_CLIENT_ID=<CLIENTID>
    ```
-4. Run 
+4. Create application in `auth0.com` and select SPA
+   ```
+   Allowed Callback URLs: http://localhost:5173
+   Allowed Logout URLs: http://localhost:5173
+   Allowed Web Origins: http://localhost:5173
+   ```
+5. Run 
    ```js
    npm run dev
    ```
@@ -128,7 +133,7 @@ To get a local copy up and running follow these simple example steps.
 
 - [X] Protected routes for pokemon
 - [X] Search pokemon
-- [ ] Favourite pokemon (only when logged in)
+- [ ] Favourite pokemon and show in profile (only when logged in)
 
 See the [open issues](https://github.com/luqmanhxc/pokesearch/issues) for a full list of proposed features (and known issues).
 
