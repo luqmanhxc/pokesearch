@@ -7,24 +7,26 @@ const Stats = ({
   speed,
 }) => {
   return (
-    <div className="mt-5 grid grid-cols-3 gap-10 rounded-lg bg-gradient-to-r from-gray-700 via-gray-900 to-black p-5 text-center text-xl tracking-wider shadow-lg">
+    <div className="my-5 grid grid-cols-3 gap-10 rounded-lg bg-gradient-to-r from-gray-700 via-gray-900 to-black p-5 text-center text-sm tracking-wider shadow-lg md:text-2xl">
       <p>
-        HEALTH <span className="block text-4xl ">{hp}</span>
+        HP <span className="block text-2xl md:text-3xl">{hp}</span>
       </p>
       <p>
-        ATTACK <span className="block text-4xl ">{attack}</span>
+        ATK <span className="block text-2xl md:text-3xl">{attack}</span>
       </p>
       <p>
-        DEFENSE <span className="block text-4xl ">{defense}</span>
+        DEF <span className="block text-2xl md:text-3xl">{defense}</span>
       </p>
       <p>
-        SP. ATTACK <span className="block text-4xl ">{specialAttack}</span>
+        SP. ATK{" "}
+        <span className="block text-2xl md:text-3xl">{specialAttack}</span>
       </p>
       <p>
-        SP. DEFENSE <span className="block text-4xl ">{specialDefense}</span>
+        SP. DEF{" "}
+        <span className="block text-2xl md:text-3xl">{specialDefense}</span>
       </p>
       <p>
-        SPEED <span className="block text-4xl ">{speed}</span>
+        SPD <span className="block text-2xl md:text-3xl">{speed}</span>
       </p>
     </div>
   );
