@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PokemonGrid = ({ pokeData }) => {
   return (
-    <div className="grid  grid-cols-2 gap-4 p-10 md:grid-cols-4">
+    <div className="grid grid-cols-2 gap-4 p-10 md:grid-cols-4">
       {pokeData
         ?.sort((a, b) => (a.id > b.id ? 1 : -1))
         .map((p) => (
