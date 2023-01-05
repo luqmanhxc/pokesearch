@@ -1,6 +1,6 @@
 const Pagination = ({ prevUrl, nextUrl, goToPrevPage, goToNextPage }) => {
   return (
-    <div className="m-auto flex w-56 items-center justify-evenly">
+    <div className="m-auto flex w-full items-center justify-evenly bg-slate-600">
       {prevUrl && (
         <button
           onClick={goToPrevPage}
