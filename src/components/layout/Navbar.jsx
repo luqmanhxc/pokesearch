@@ -8,6 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Logo from "../../images/pokesearch.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SearchSection from "../Search";
+import SearchSectionMobile from "../SearchMobile";
 
 export default function Navbar() {
   const [nav, setNav] = useState(false);
@@ -70,6 +71,7 @@ export default function Navbar() {
             Profile
           </li>
         </Link>
+        <SearchSectionMobile />
         <div className="my-4 flex flex-col">
           {!isAuthenticated && <LoginButtonMobile />}
           {isAuthenticated && <LogoutButtonMobile />}
