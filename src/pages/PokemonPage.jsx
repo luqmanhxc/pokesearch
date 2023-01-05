@@ -41,7 +41,7 @@ const PokemonPage = () => {
   return (
     <Layout>
       <div
-        className={`m-auto h-full bg-gradient-to-r text-white from-${mainType} to-${POKEAPI_TYPE_TO_COLOR[mainType]} flex flex-col items-center justify-center pb-5`}
+        className={`m-auto h-[1000px] bg-gradient-to-r text-white from-${mainType} to-${POKEAPI_TYPE_TO_COLOR[mainType]} flex flex-col items-center justify-center pb-5`}
       >
         <div className="relative mb-4 flex items-center justify-center p-5 font-inter">
           <p className="text-9xl font-bold opacity-20">#{id}</p>
